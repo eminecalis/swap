@@ -29,33 +29,19 @@ swap_char(char *first_char, char *second_char)
 
 swap_string (char **str1, char **str2)
 {
-	char *str_temp = malloc(MAX);
-/*	strcpy(str_temp,str1);
-	strcpy(str1,str2);
-	strcpy(str2,str_temp);*/
-    *str_temp = *str1;
+	char *str_temp;
+    str_temp = *str1;
     *str1 = *str2;
-    *str2 = *str1;	
+    *str2 = str_temp;	
 	
 }
 
 swap_listItem(List **item1, List **item2) 
 {
 	List *temp;
-	temp = malloc(sizeof(List));
-	*temp = **item1;
-	**item1 = **item2;
-	**item2 = *temp;
-/*	temp.name = item1->name;
-	temp.next = item1->next;
-	temp.prev = item1->prev;
-	item1->name = item2->name;
-	item1->prev = item2->prev;
-	item1->next = item2->next;
-	item2->name = temp.name;
-	item2->prev = temp.prev;
-	item2->next = temp.next;*/
-	
+	temp = *item1;
+	*item1 = *item2;
+	*item2 = temp;
 }
 
 int main (int argc, char*argv[])
@@ -90,7 +76,7 @@ int main (int argc, char*argv[])
 	printf("Swap von Strings!\n");
     swap_string(&string1,&string2);				//wie so funktioniert das nicht mit str1 und str2 ???????
     
-	if (strcmp(string1, str2) == 0)
+	if (strcmp(string2, str1) == 0)
 	{
 		printf("Strings erfolgreich getauscht\n");
 		
