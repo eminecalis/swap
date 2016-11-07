@@ -11,7 +11,7 @@ typedef struct list {
 	
 }List; 
 
-swap_int(int *x, int *y)
+void swap_int(int *x, int *y)
 {
 	int temp;
 	temp = *x;
@@ -19,7 +19,7 @@ swap_int(int *x, int *y)
 	*y = temp;	
 }
 
-swap_char(char *first_char, char *second_char)
+void swap_char(char *first_char, char *second_char)
 {
 	char temp;
 	temp = *first_char;
@@ -27,7 +27,7 @@ swap_char(char *first_char, char *second_char)
 	*second_char = temp;	
 }
 
-swap_string (char **str1, char **str2)
+void swap_string (char **str1, char **str2)
 {
 	char *str_temp;
     str_temp = *str1;
@@ -36,7 +36,7 @@ swap_string (char **str1, char **str2)
 	
 }
 
-swap_listItem(List **item1, List **item2) 
+void swap_listItem(List **item1, List **item2) 
 {
 	List *temp;
 	temp = *item1;
